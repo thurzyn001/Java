@@ -10,7 +10,17 @@ public class contaBanco {
     public float saldo;
     public boolean status;
 
+    public void criarConta(int numConta, String tipo, String titular, float saldo, boolean status){ //método construtor
+        this.numConta = 0;
+        this.tipo = "";
+        this.titular = "";
+        this.saldo = 0.0f;
+        this.status = false;
+    }
+
     public void abrirConta(){
+
+        abrirConta();
         System.out.println("Vamos começar o processo de abertura de conta.");
         System.out.println("Qual o tipo de conta que você deseja abrir?");
         System.out.println("Digite o número correspondente a opção desejada:");
@@ -25,12 +35,14 @@ public class contaBanco {
             case "CC":
                 this.tipo = "Conta Corrente";
                 System.out.println("tipo de conta selecionada: Conta Corrente");
+                this.saldo = 50.0f;
                 System.out.println( "Você receberá R$50,00 de bônus de abertura de conta.");
                 break;
 
             case "CP":
                 this.tipo = "Conta Poupança";
                 System.out.println("tipo de conta selecionada: Conta Poupança");
+                this.saldo = 150.0f;
                 System.out.println( "Você receberá R$150,00 de bônus de abertura de conta.");
                 break;
 
