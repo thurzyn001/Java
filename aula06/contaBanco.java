@@ -91,4 +91,37 @@ public class contaBanco {
         }
     }
 
+    public void pagarMensal(){
+        float valorMensal;
+        if(this.tipo.equals("Conta Corrente")){
+            valorMensal = 12.0f;
+        } else if(this.tipo.equals("Conta Poupança")){
+            valorMensal = 20.0f;
+        } else {
+            System.out.println("Tipo de conta inválido.");
+            return;
+        }
+
+        if(this.status){
+            if(this.saldo >= valorMensal){
+                this.saldo -= valorMensal;
+                System.out.println("Mensalidade de R$" + valorMensal + " debitada com sucesso na conta de " + this.titular);
+            } else {
+                System.out.println("Saldo insuficiente para pagar a mensalidade.");
+            }
+        } else {
+            System.out.println("Impossível cobrar mensalidade de uma conta fechada.");
+        }
+    }
+
+    public void extrato(){
+        System.out.println("----- Extrato da Conta -----");
+        System.out.println("Número da Conta: " + this.numConta);
+        System.out.println("Tipo da Conta: " + this.tipo);
+        System.out.println("Titular da Conta: " + this.titular);
+        System.out.println("Saldo da Conta: R$" + this.saldo);
+        System.out.println("Status da Conta: " + (this.status ? "Ativa" : "Inativa"));
+        System.out.println("----------------------------");
+
+    }
 }
