@@ -10,7 +10,7 @@ public class contaBanco {
     public float saldo;
     public boolean status;
 
-    public void criarConta(int numConta, String tipo, String titular, float saldo, boolean status){ //método construtor
+    public contaBanco(){
         this.numConta = 0;
         this.tipo = "";
         this.titular = "";
@@ -20,54 +20,55 @@ public class contaBanco {
 
     public void abrirConta(){
 
-        abrirConta();
-        System.out.println("Vamos começar o processo de abertura de conta.");
-        System.out.println("Qual o tipo de conta que você deseja abrir?");
-        System.out.println("Digite o número correspondente a opção desejada:");
-        System.out.println("CC - Conta Corrente");
-        System.out.println("CP - Conta Poupança");
+    System.out.println("Vamos começar o processo de abertura de conta.");
+    System.out.println("Qual o tipo de conta que você deseja abrir?");
+    System.out.println("Digite o número correspondente a opção desejada:");
+    System.out.println("CC - Conta Corrente");
+    System.out.println("CP - Conta Poupança");
 
-        Scanner scanner = new Scanner(System.in);
-        String tipo = scanner.nextLine();
+    Scanner scanner2 = new Scanner(System.in);
+    String tipo = scanner2.nextLine();
 
-        switch(tipo){
+    switch(tipo){
 
-            case "CC":
-                this.tipo = "Conta Corrente";
-                System.out.println("tipo de conta selecionada: Conta Corrente");
-                this.saldo = 50.0f;
-                System.out.println( "Você receberá R$50,00 de bônus de abertura de conta.");
-                break;
+        case "CC":
+            this.tipo = "Conta Corrente";
+            System.out.println("tipo de conta selecionada: Conta Corrente");
+            this.saldo = 50.0f;
+            System.out.println( "Você receberá R$50,00 de bônus de abertura de conta.");
+            break;
 
-            case "CP":
-                this.tipo = "Conta Poupança";
-                System.out.println("tipo de conta selecionada: Conta Poupança");
-                this.saldo = 150.0f;
-                System.out.println( "Você receberá R$150,00 de bônus de abertura de conta.");
-                break;
+        case "CP":
+            this.tipo = "Conta Poupança";
+            System.out.println("tipo de conta selecionada: Conta Poupança");
+            this.saldo = 150.0f;
+            System.out.println( "Você receberá R$150,00 de bônus de abertura de conta.");
+            break;
 
-            default:
-                System.out.println("Opção inválida. Por favor, escolha CC ou CP.");
-        }
-
-        System.out.println("Agora o sistema irá gerar o número da sua conta.");
-        this.numConta = (int)(Math.random() * 1000000);
-        System.out.println("Número da conta gerado: " + this.numConta);
-
-        System.out.println("Por fim, informe o nome do titular da conta:");
-        this.titular = scanner.nextLine();
-        System.out.println("Titular da conta: " + this.titular);
-        scanner.close();
-
-        this.status = true;
-        System.out.println("Conta aberta com sucesso!");
-        System.out.println("Informações da Conta da conta criada");
-        System.out.println("Número da Conta: " + this.numConta);
-        System.out.println("Tipo da Conta: " + this.tipo);
-        System.out.println("Titular da Conta: " + this.titular);
-        System.out.println("Status da Conta: " + (this.status ? "Ativa" : "Inativa"));
-        System.out.println("Saldo Inicial: R$" + this.saldo);
+        default:
+            System.out.println("Opção inválida. Por favor, escolha CC ou CP.");
+            scanner2.close();
+            return;
     }
+
+    System.out.println("Agora o sistema irá gerar o número da sua conta.");
+    this.numConta = (int)(Math.random() * 1000000);
+    System.out.println("Número da conta gerado: " + this.numConta);
+
+    System.out.println("Por fim, informe o nome do titular da conta:");
+    this.titular = scanner2.nextLine();
+
+    this.status = true;
+    System.out.println("Conta aberta com sucesso!");
+    System.out.println("Informações da Conta:");
+    System.out.println("Número da Conta: " + this.numConta);
+    System.out.println("Tipo da Conta: " + this.tipo);
+    System.out.println("Titular da Conta: " + this.titular);
+    System.out.println("Status da Conta: " + (this.status ? "Ativa" : "Inativa"));
+    System.out.println("Saldo Inicial: R$" + this.saldo);
+
+    scanner2.close();
+}
 
     public void fecharConta(){
         if(this.saldo > 0){
