@@ -1,4 +1,4 @@
-package aula06;
+package aula5teste;
 
 public class Conta {
 

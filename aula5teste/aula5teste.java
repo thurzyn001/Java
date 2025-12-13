@@ -1,8 +1,8 @@
-package aula06;
+package aula5teste;
 
 import java.util.Scanner;
 
-public class aula06 {
+public class aula5teste {
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
