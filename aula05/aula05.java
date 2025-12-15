@@ -17,5 +17,13 @@ public class aula05 {
         p2.depositar(500);
         p2.sacar(100);
         p2.estadoAtual();
+
+        ContaBanco p3 = new ContaBanco();
+        p3.setNumConta(3333);
+        p3.setDono("TTVO");
+        p3.abrirConta("CC");
+        p3.depositar(1000);
+        p3.sacar(-120);
+        p3.estadoAtual();
     }   
 }

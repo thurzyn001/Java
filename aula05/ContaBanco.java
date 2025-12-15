@@ -11,11 +11,14 @@ public class ContaBanco {
 
     //Construtor
     public ContaBanco() {
+        this.numConta = 0;
+        this.tipo = "";
+        this.dono = "";
         this.saldo = 0;
         this.status = false;
     }
 
-    //GETTERS E SETTERS
+    //Getters E Setters
     public void setNumConta(int n){
         this.numConta = n;
     }
