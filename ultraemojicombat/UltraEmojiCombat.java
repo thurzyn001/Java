@@ -19,7 +19,7 @@ public class UltraEmojiCombat {
         L[5] = new Lutador("Nerdaard 🤓", "Norte-Americano", 30, 1.81f, 105.7f, 12, 2, 4);
 
         for (int i = 0; i < L.length; i++) {
-            L[i].apresentar();
+            L[i].status();
         }
     }
 }
