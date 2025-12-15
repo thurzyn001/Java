@@ -79,7 +79,11 @@ public class ControleRemoto implements Controlador {
 
     @Override
     public void fecharMenu() {
-        System.out.println("Fechando Menu...");
+        if (this.getLigado()) {
+            System.out.println("Fechando Menu...");
+        } else {
+            System.out.println("O aparelho está desligado. Não é possível fechar o menu.");
+        }
     }
 
     @Override
@@ -131,5 +135,5 @@ public class ControleRemoto implements Controlador {
             System.out.println("Não é possível pausar, verifique se está ligado e se já está pausado.");
         }
     }
-
+    
 }
