@@ -1,6 +1,6 @@
-package aula07;
+package ultraemojicombat;
 
-public interface Menu {
+public interface InterfaceLutador {
 
     public abstract void apresentar();
     public abstract void status();

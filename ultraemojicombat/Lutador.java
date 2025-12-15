@@ -1,6 +1,6 @@
-package aula07;
+package ultraemojicombat;
 
-public class Lutador implements Menu {
+public class Lutador implements InterfaceLutador {
 
     // Atributos:
 
@@ -14,7 +14,7 @@ public class Lutador implements Menu {
     private int derrotas;
     private int empates;
 
-    // Métodos Especiais:
+    // Métodos Públicos:
 
     // Construtor
 
@@ -31,7 +31,7 @@ public class Lutador implements Menu {
         
     }
 
-    // Métodos Getters e Setters
+    // Getters e Setters
 
     public String getNome() {
         return nome;
@@ -123,8 +123,7 @@ public class Lutador implements Menu {
 
     @Override
     public void apresentar() {
-
-        System.out.println("==========================================");
+        System.out.println("==============================================");
         System.out.println("Lutador: " + this.getNome());
         System.out.println("Nacionalidade: " + this.getNacionalidade());
         System.out.println("Idade: " + this.getIdade());
@@ -134,37 +133,31 @@ public class Lutador implements Menu {
         System.out.println("Vitórias: " + this.getVitorias());
         System.out.println("Derrotas: " + this.getDerrotas());
         System.out.println("Empates: " + this.getEmpates());
-        System.out.println("==========================================");
-
+        System.out.println("==============================================");
     }
 
     @Override
     public void status() {
+        System.out.println("==============================================");
         System.out.println("O lutador " + this.getNome());
         System.out.println("É da categoria de Peso " + getCategoria());
         System.out.println("E possui " + this.getVitorias() + " vitórias, " + this.getDerrotas() + " derrotas e " + this.getEmpates() + " empates.");
-
+        System.out.println("==============================================");
     }
 
     @Override
     public void ganharLuta(){
-
         this.setVitorias(getVitorias() + 1);
-
     }
 
     @Override
     public void perderLuta() {
-        
         this.setDerrotas(getDerrotas() + 1);
-
     }
 
     @Override
     public void empatarLuta(){
-
         this.setEmpates(getEmpates() + 1);
-
     }
 
 }

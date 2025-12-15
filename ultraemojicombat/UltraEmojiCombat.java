@@ -1,6 +1,6 @@
-package aula07;
+package ultraemojicombat;
 
-public class aula07 {
+public class UltraEmojiCombat {
 
     public static void main(String[] args) {
 
