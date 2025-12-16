@@ -80,7 +80,7 @@ public class Lutador implements InterfaceLutador {
 
     private void setCategoria() {
         
-        if (peso < 52.2) {
+        if (peso < 52.2 || peso > 120.2) {
             this.categoria = "Inválido";
         } else if (peso <= 70.3) {
             this.categoria = "Leve";
@@ -88,8 +88,6 @@ public class Lutador implements InterfaceLutador {
             this.categoria = "Médio";
         } else if (peso <= 120.2) {
             this.categoria = "Pesado";
-        } else {
-            this.categoria = "Inválido";
         }
     }
 
@@ -131,6 +129,11 @@ public class Lutador implements InterfaceLutador {
         System.out.println("Vitórias: " + this.getVitorias());
         System.out.println("Derrotas: " + this.getDerrotas());
         System.out.println("Empates: " + this.getEmpates());
+        if (categoria == "Inválido" && peso < 52.2){
+            System.out.println("Este Lutador não pode lutar pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
+        } else if (categoria == "Inválido" && peso > 120.2) {
+            System.out.println("Este lutador não pode lutar pois ultrapssou o peso Máximo para a categoria de Peso Pesado de 120.2 Kgs");
+        }
         System.out.println("===============================================");
     }
 
