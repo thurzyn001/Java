@@ -16,7 +16,7 @@ public class Lutador implements InterfaceLutador {
 
     // Métodos Públicos:
 
-    // Construtor
+    // Método Construtor
 
     public Lutador (String no, String na, int id, float al, float pe, int vi, int de, int em){
 
@@ -31,7 +31,7 @@ public class Lutador implements InterfaceLutador {
         
     }
 
-    // Getters e Setters
+    // Métodos Getters e Setters
 
     public String getNome() {
         return nome;
