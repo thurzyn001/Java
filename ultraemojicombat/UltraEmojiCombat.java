@@ -21,5 +21,6 @@ public class UltraEmojiCombat {
         for (int i = 0; i < L.length; i++) {
             L[i].status();
         }
+
     }
 }
