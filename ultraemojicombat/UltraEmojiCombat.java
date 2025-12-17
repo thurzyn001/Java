@@ -18,9 +18,9 @@ public class UltraEmojiCombat {
 
         L[5] = new Lutador("Nerdaard 🤓", "dos Etados-Unidos", 30, 1.81f, 105.7f, 12, 2, 4);
 
-        //for (int i = 0; i < L.length; i++) {
-        //    L[i].status();
-        //}
+        for (int i = 0; i < L.length; i++) {
+           L[i].status();
+        }
 
         Luta UEC = new Luta(6);
 
@@ -33,7 +33,7 @@ public class UltraEmojiCombat {
         UEC.marcarLuta(L[0], L[0]);
         UEC.luta();
 
-        L[4].setPeso(122.0f);
+        L[4].setPeso(130.0f);
 
         UEC.marcarLuta(L[4], L[5]);
         UEC.luta();

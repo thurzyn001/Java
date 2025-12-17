@@ -2,6 +2,8 @@ package ultraemojicombat;
 
 public class Luta implements InterfaceLuta {
 
+    // Atributos
+
     private Lutador desafiado;
     private Lutador desafiante;
     private int rounds;
@@ -56,14 +58,15 @@ public class Luta implements InterfaceLuta {
     @Override
     public void marcarLuta(Lutador l1, Lutador l2) {
 
-    System.out.println("================================= LUTA ==================================");
+        System.out.println("");
+        System.out.println("=========================================== LUTA ============================================");
 
-        if (
-            !l1.getCategoria().equals("Inválido") &&
+        System.out.println("");
+
+        if (!l1.getCategoria().equals("Inválido") &&
             !l2.getCategoria().equals("Inválido") &&
             l1.getCategoria().equals(l2.getCategoria()) &&
-            l1 != l2
-        ) {
+            l1 != l2) {
 
             this.setAprovada(true);
             this.setDesafiado(l1);
@@ -92,39 +95,52 @@ public class Luta implements InterfaceLuta {
         if (getDesafiado() == getDesafiante()) {
 
             System.out.println("Luta não aprovada: o desafiado e o desafiante são o mesmo lutador.");
+            System.out.println(getDesafiado().getNome() + " vs " + getDesafiante().getNome());
 
-        } 
-        else if (getDesafiado().getCategoria().equals("Inválido")) {
+        } else if (getDesafiado().getCategoria().equals("Inválido")) {
 
-            System.out.println("O lutador " + getDesafiado().getNome() +" não pode lutar pois está na Categoria Inválido.");
+            System.out.println("Luta não aprovada: o lutador " + getDesafiado().getNome() + 
+            "  Está atualmente com " + getDesafiado().getPeso() + "Kgs" + " e " + "não pode lutar,");
 
-        } 
-        else if (getDesafiante().getCategoria().equals("Inválido")) {
+            if (getDesafiado().getCategoria().equals("Inválido") && getDesafiado().getPeso() < 52.2){
 
-            System.out.println(
-                "O lutador " + getDesafiante().getNome() + " não pode lutar pois está na Categoria Inválido.");
+                System.out.println("pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
 
-        } 
-        else if (!getDesafiado().getCategoria()
-                    .equals(getDesafiante().getCategoria())) {
+            } else if (getDesafiado().getCategoria().equals("Inválido") && getDesafiado().getPeso() > 120.2) {
+
+                System.out.println("pois ultrapssou o peso máximo para a categoria de Peso Pesado de 120.2 Kgs");
+            }
+
+        } else if (getDesafiante().getCategoria().equals("Inválido")) {
+
+            System.out.println("Luta não aprovada: o lutador " + getDesafiante().getNome() + 
+            "  Está atualmente com " + getDesafiante().getPeso() + "Kgs" + " e " + "não pode lutar,");
+
+            if (getDesafiante().getCategoria().equals("Inválido") && getDesafiante().getPeso() < 52.2){
+
+                System.out.println("pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
+
+            } else if (getDesafiante().getCategoria().equals("Inválido") && getDesafiante().getPeso() > 120.2) {
+
+                System.out.println("pois ultrapssou o peso máximo para a categoria de Peso Pesado de 120.2 Kgs");
+            }
+
+        } else if (!getDesafiado().getCategoria().equals(getDesafiante().getCategoria())) {
 
             System.out.println("Luta não aprovada: lutadores de categorias diferentes.");
             System.out.println(getDesafiado().getNome() + " - " + getDesafiado().getCategoria() +
             " vs " + getDesafiante().getNome() + " - " + getDesafiante().getCategoria());
             
 
-        } 
-        else {
+        } else {
 
             getDesafiado().apresentar();
             getDesafiante().apresentar();
         }
 
-        System.out.println("=========================================================================");
+        System.out.println("");
+        System.out.println("=============================================================================================");
 
     }
 
-
 }
-
-
