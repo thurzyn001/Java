@@ -119,27 +119,31 @@ public class Lutador implements InterfaceLutador {
 
     @Override
     public void apresentar() {
-        System.out.println("================ APRESENTANDO =================");
-        System.out.println("Lutador: " + this.getNome());
-        System.out.println("Nacionalidade: " + this.getNacionalidade());
-        System.out.println("Idade: " + this.getIdade() + " Anos");
-        System.out.println("Altura: " + this.getAltura() + " M");
-        System.out.println("Peso: " + this.getPeso() + " Kgs");
-        System.out.println("Categoria: " + this.getCategoria());
-        System.out.println("Vitórias: " + this.getVitorias());
-        System.out.println("Derrotas: " + this.getDerrotas());
-        System.out.println("Empates: " + this.getEmpates());
+        System.out.println("============================= APRESENTANDO ==============================");
+        System.out.println("O Lutador " + this.getNome());
+        System.out.println("Diretamente " + this.getNacionalidade());
+        System.out.println("Tem " + this.getIdade() + " Anos" + " e " + this.getAltura() + " Metros de altura");
+        System.out.println("Pesando " + this.getPeso() + " Kgs");
+        System.out.println("Lutará na categoria de Peso " + this.getCategoria());
+
+        String vitoria = (this.getVitorias() == 1) ? "vitória" : "vitórias";
+        String derrota = (this.getDerrotas() == 1) ? "derrota" : "derrotas";
+        String empate  = (this.getEmpates()  == 1) ? "empate"  : "empates";
+
+        System.out.println("Possuindo um total de " + this.getVitorias() + " " + vitoria + 
+        ", " + this.getDerrotas()+ " " + derrota + " e " + this.getEmpates()+ " " + empate);
+
         if (categoria == "Inválido" && peso < 52.2){
             System.out.println("Este Lutador não pode lutar pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
         } else if (categoria == "Inválido" && peso > 120.2) {
             System.out.println("Este lutador não pode lutar pois ultrapssou o peso Máximo para a categoria de Peso Pesado de 120.2 Kgs");
         }
-        System.out.println("===============================================");
+        System.out.println("=========================================================================");
     }
 
     @Override
     public void status() {
-    System.out.println("=================== STATUS ====================");
+    System.out.println("=============================== STATUS ================================");
     System.out.println("O lutador " + this.getNome());
     System.out.println("É da categoria de Peso " + this.getCategoria() +
         " com " + this.getPeso() + " Kgs");
@@ -152,7 +156,7 @@ public class Lutador implements InterfaceLutador {
         "E possui " + this.getVitorias() + " " + vitoria + ", " +
         this.getDerrotas() + " " + derrota + " e " +
         this.getEmpates() + " " + empate);
-    System.out.println("===============================================");
+    System.out.println("====================================================================");
 }
 
     @Override
