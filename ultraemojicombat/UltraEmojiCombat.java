@@ -5,7 +5,7 @@ public class UltraEmojiCombat {
     public static void main(String[] args) {
 
         Lutador L[] = new Lutador[6];
-
+        
         L[0] = new Lutador("Pretty Boy 😎", "da França", 31, 1.75f, 68.9f, 11, 3, 1);
 
         L[1] = new Lutador("Putscript 😠", "do Brasil", 29, 1.68f, 57.8f, 14, 2, 3);
@@ -16,7 +16,7 @@ public class UltraEmojiCombat {
 
         L[4] = new Lutador("Ufocobol 👽", "do Brasil", 37, 1.70f, 119.3f, 5, 4, 3);
 
-        L[5] = new Lutador("Nerdaard 🤓", "dos Etados-Unidos", 30, 1.81f, 105.7f, 12, 2, 4);
+        L[5] = new Lutador("Nerdaard 🤓", "dos Estados-Unidos", 30, 1.81f, 105.7f, 12, 2, 4);
 
         for (int i = 0; i < L.length; i++) {
            L[i].status();
@@ -34,9 +34,11 @@ public class UltraEmojiCombat {
         UEC.luta();
 
         L[4].setPeso(130.0f);
+        L[4].status();
 
         UEC.marcarLuta(L[4], L[5]);
         UEC.luta();
 
     }
+
 }

@@ -60,7 +60,6 @@ public class Luta implements InterfaceLuta {
 
         System.out.println("");
         System.out.println("=========================================== LUTA ============================================");
-
         System.out.println("");
 
         if (!l1.getCategoria().equals("Inválido") &&
@@ -72,13 +71,7 @@ public class Luta implements InterfaceLuta {
             this.setDesafiado(l1);
             this.setDesafiante(l2);
 
-            System.out.println(
-                "Luta marcada entre " +
-                l1.getNome() +
-                " e " +
-                l2.getNome() +
-                "."
-            );
+            System.out.println("Luta marcada entre " + l1.getNome() + " e " + l2.getNome());
 
         } else {
 
@@ -100,13 +93,13 @@ public class Luta implements InterfaceLuta {
         } else if (getDesafiado().getCategoria().equals("Inválido")) {
 
             System.out.println("Luta não aprovada: o lutador " + getDesafiado().getNome() + 
-            "  Está atualmente com " + getDesafiado().getPeso() + "Kgs" + " e " + "não pode lutar,");
+            " Está atualmente com " + getDesafiado().getPeso() + " Kgs" + " e não pode lutar,");
 
-            if (getDesafiado().getCategoria().equals("Inválido") && getDesafiado().getPeso() < 52.2){
+            if (getDesafiado().getPeso() < 52.2){
 
                 System.out.println("pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
 
-            } else if (getDesafiado().getCategoria().equals("Inválido") && getDesafiado().getPeso() > 120.2) {
+            } else if (getDesafiado().getPeso() > 120.2) {
 
                 System.out.println("pois ultrapssou o peso máximo para a categoria de Peso Pesado de 120.2 Kgs");
             }
@@ -114,13 +107,13 @@ public class Luta implements InterfaceLuta {
         } else if (getDesafiante().getCategoria().equals("Inválido")) {
 
             System.out.println("Luta não aprovada: o lutador " + getDesafiante().getNome() + 
-            "  Está atualmente com " + getDesafiante().getPeso() + "Kgs" + " e " + "não pode lutar,");
+            " Está atualmente com " + getDesafiante().getPeso() + " Kgs" + " e não pode lutar,");
 
-            if (getDesafiante().getCategoria().equals("Inválido") && getDesafiante().getPeso() < 52.2){
+            if (getDesafiante().getPeso() < 52.2){
 
                 System.out.println("pois não atingiu o peso mínimo para a categoria de Peso Leve de 52.2 Kgs.");
 
-            } else if (getDesafiante().getCategoria().equals("Inválido") && getDesafiante().getPeso() > 120.2) {
+            } else if (getDesafiante().getPeso() > 120.2) {
 
                 System.out.println("pois ultrapssou o peso máximo para a categoria de Peso Pesado de 120.2 Kgs");
             }
@@ -136,6 +129,54 @@ public class Luta implements InterfaceLuta {
 
             getDesafiado().apresentar();
             getDesafiante().apresentar();
+
+            System.out.println("");
+
+            int vencedor = (Math.random() * 3);
+
+            switch (vencedor) {
+                
+            case 0:
+                
+                System.out.println("A luta terminou em empate");
+                getDesafiado().empatarLuta();
+                getDesafiante().empatarLuta();
+                break;
+
+            case 1:
+
+                String vitoria1 = (getDesafiado().getVitorias() == 1) ? "vitória" : "vitórias";
+                String derrota1 = (getDesafiado().getDerrotas() == 1) ? "derrota" : "derrotas";
+                String empate1  = (getDesafiado().getEmpates()  == 1) ? "empate"  : "empates";
+
+                getDesafiado().ganharLuta();
+                getDesafiante().perderLuta();
+
+                System.out.println(getDesafiado().getNome() + " venceu a luta! Possuindo agora " +
+                    getDesafiado().getVitorias() + " " + vitoria1 + ", " +
+                    getDesafiado().getDerrotas() + " " + derrota1 + " e " +
+                    getDesafiado().getEmpates() + " " + empate1 + "!");
+
+                break;
+
+            case 2:
+
+                String vitoria2 = (getDesafiante().getVitorias() == 1) ? "vitória" : "vitórias";
+                String derrota2 = (getDesafiante().getDerrotas() == 1) ? "derrota" : "derrotas";
+                String empate2  = (getDesafiante().getEmpates()  == 1) ? "empate"  : "empates";
+
+                getDesafiante().ganharLuta();
+                getDesafiado().perderLuta();
+
+                System.out.println(getDesafiante().getNome() + " venceu a luta! Possuindo agora " +
+                    getDesafiante().getVitorias() + " " + vitoria2 + ", " +
+                    getDesafiante().getDerrotas() + " " + derrota2 + " e " +
+                    getDesafiante().getEmpates() + " " + empate2 + "!");
+
+
+                break;
+            }
+
         }
 
         System.out.println("");

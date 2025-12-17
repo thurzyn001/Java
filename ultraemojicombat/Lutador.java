@@ -144,17 +144,14 @@ public class Lutador implements InterfaceLutador {
         System.out.println("========================================== STATUS ===========================================");
         System.out.println("");
         System.out.println("O lutador " + this.getNome());
-        System.out.println("É da categoria de Peso " + this.getCategoria() +
-            " com " + this.getPeso() + " Kgs");
+        System.out.println("É da categoria de Peso " + this.getCategoria() +" com " + this.getPeso() + " Kgs");
 
         String vitoria = (this.getVitorias() == 1) ? "vitória" : "vitórias";
         String derrota = (this.getDerrotas() == 1) ? "derrota" : "derrotas";
         String empate  = (this.getEmpates()  == 1) ? "empate"  : "empates";
 
-        System.out.println(
-            "E possui " + this.getVitorias() + " " + vitoria + ", " +
-            this.getDerrotas() + " " + derrota + " e " +
-            this.getEmpates() + " " + empate);
+        System.out.println("E possui " + this.getVitorias() + " " + vitoria + ", " + 
+            this.getDerrotas() + " " + derrota + " e " + this.getEmpates() + " " + empate);
         System.out.println("");
         System.out.println("=============================================================================================");
     }
