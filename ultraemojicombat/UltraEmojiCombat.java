@@ -18,26 +18,10 @@ public class UltraEmojiCombat {
 
         L[5] = new Lutador("Nerdaard 🤓", "dos Estados-Unidos", 30, 1.81f, 105.7f, 12, 2, 4);
 
-        for (int i = 0; i < L.length; i++) {
-           L[i].status();
-        }
+        Luta UEC01 = new Luta(6);
 
-        Luta UEC = new Luta(6);
-
-        UEC.marcarLuta(L[0], L[1]);
-        UEC.luta();
-
-        UEC.marcarLuta(L[2], L[4]);
-        UEC.luta();
-
-        UEC.marcarLuta(L[0], L[0]);
-        UEC.luta();
-
-        L[4].setPeso(130.0f);
-        L[4].status();
-
-        UEC.marcarLuta(L[4], L[5]);
-        UEC.luta();
+        UEC01.marcarLuta(L[0], L[1]);
+        UEC01.luta();
 
     }
 

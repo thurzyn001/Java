@@ -135,58 +135,101 @@ public class Luta implements InterfaceLuta {
             getDesafiado().apresentar();
             getDesafiante().apresentar();
 
-            System.out.println("");
-
-            int vencedor = (int) (Math.random() * 3);
-
-            switch (vencedor) {
-                
-            case 0:
-                
-                System.out.println("A luta terminou em empate");
-                getDesafiado().empatarLuta();
-                getDesafiante().empatarLuta();
-                break;
-
-            case 1:
-
-                String vitoria1 = (getDesafiado().getVitorias() == 1) ? "vitória" : "vitórias";
-                String derrota1 = (getDesafiado().getDerrotas() == 1) ? "derrota" : "derrotas";
-                String empate1  = (getDesafiado().getEmpates()  == 1) ? "empate"  : "empates";
-
-                getDesafiado().ganharLuta();
-                getDesafiante().perderLuta();
-
-                System.out.println(getDesafiado().getNome() + " venceu a luta! Possuindo agora " +
-                    getDesafiado().getVitorias() + " " + vitoria1 + ", " +
-                    getDesafiado().getDerrotas() + " " + derrota1 + " e " +
-                    getDesafiado().getEmpates() + " " + empate1 + "!");
-
-                break;
-
-            case 2:
-
-                String vitoria2 = (getDesafiante().getVitorias() == 1) ? "vitória" : "vitórias";
-                String derrota2 = (getDesafiante().getDerrotas() == 1) ? "derrota" : "derrotas";
-                String empate2  = (getDesafiante().getEmpates()  == 1) ? "empate"  : "empates";
-
-                getDesafiante().ganharLuta();
-                getDesafiado().perderLuta();
-
-                System.out.println(getDesafiante().getNome() + " venceu a luta! Possuindo agora " +
-                    getDesafiante().getVitorias() + " " + vitoria2 + ", " +
-                    getDesafiante().getDerrotas() + " " + derrota2 + " e " +
-                    getDesafiante().getEmpates() + " " + empate2 + "!");
-
-
-                break;
+            try {
+                System.out.println("");
+                System.out.println("A LUTA COMEÇA EM 3...");
+                Thread.sleep(1000);
+                System.out.println("2...");
+                Thread.sleep(1000);
+                System.out.println("1...");
+                Thread.sleep(1000);
+                System.out.println("");
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
 
-        }
+
+            int hpDesafiado = 100;
+            int hpDesafiante = 100;
+            int rounds = this.getRounds();
+            boolean nocaute = false;
+
+            for (int i = 1; i <= rounds; i++) {
+                if (nocaute) break;
+
+                System.out.println("---------- ROUND " + i + " ----------");
+
+                int poderDesafiado = 5 + (int) (Math.random() * 10) + (getDesafiado().getVitorias() / 2);
+                int poderDesafiante = 5 + (int) (Math.random() * 10) + (getDesafiante().getVitorias() / 2);
+
+                System.out.println(getDesafiado().getNome() + " atacou com poder de " + poderDesafiado);
+                System.out.println(getDesafiante().getNome() + " atacou com poder de " + poderDesafiante);
+                System.out.println("");
+
+                if (poderDesafiado > poderDesafiante) {
+                    System.out.println(getDesafiado().getNome() + " venceu o round!");
+                    int dano = poderDesafiado - poderDesafiante > 0 ? poderDesafiado - poderDesafiante : 1;
+                    hpDesafiante -= dano;
+                    System.out.println(getDesafiante().getNome() + " sofreu " + dano + " de dano!");
+                } else if (poderDesafiante > poderDesafiado) {
+                    System.out.println(getDesafiante().getNome() + " venceu o round!");
+                    int dano = poderDesafiante - poderDesafiado > 0 ? poderDesafiante - poderDesafiado : 1;
+                    hpDesafiado -= dano;
+                    System.out.println(getDesafiado().getNome() + " sofreu " + dano + " de dano!");
+                } else {
+                    System.out.println("Round empatado, ninguém se feriu.");
+                }
+
+                hpDesafiado = Math.max(0, hpDesafiado);
+                hpDesafiante = Math.max(0, hpDesafiante);
+
+                System.out.println("Placar de HP: " + getDesafiado().getNome() + " [" + hpDesafiado + " HP] vs " + getDesafiante().getNome() + " [" + hpDesafiante + " HP]");
+                System.out.println("---------------------------");
+                System.out.println("");
+
+                if (hpDesafiado <= 0) {
+                    System.out.println(getDesafiado().getNome() + " não pode mais lutar! NOCAUTE!");
+                    System.out.println("O vencedor é " + getDesafiante().getNome() + "!");
+                    getDesafiante().ganharLuta();
+                    getDesafiado().perderLuta();
+                    nocaute = true;
+                } else if (hpDesafiante <= 0) {
+                    System.out.println(getDesafiante().getNome() + " não pode mais lutar! NOCAUTE!");
+                    System.out.println("O vencedor é " + getDesafiado().getNome() + "!");
+                    getDesafiado().ganharLuta();
+                    getDesafiante().perderLuta();
+                    nocaute = true;
+                }
+                
+                if (i < rounds) {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+
+            if (!nocaute) {
+                System.out.println("Fim dos rounds! A decisão será por pontos (HP restante).");
+                if (hpDesafiado > hpDesafiante) {
+                    System.out.println("O vencedor por pontos é " + getDesafiado().getNome() + "!");
+                    getDesafiado().ganharLuta();
+                    getDesafiante().perderLuta();
+                } else if (hpDesafiante > hpDesafiado) {
+                    System.out.println("O vencedor por pontos é " + getDesafiante().getNome() + "!");
+                    getDesafiante().ganharLuta();
+                    getDesafiado().perderLuta();
+                } else {
+                    System.out.println("A luta terminou em EMPATE por pontos!");
+                    getDesafiado().empatarLuta();
+                    getDesafiante().empatarLuta();
+                }
+            }
+        } 
 
         System.out.println("");
         System.out.println("=============================================================================================");
-
     }
 
 }
