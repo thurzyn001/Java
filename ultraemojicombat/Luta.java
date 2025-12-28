@@ -137,7 +137,7 @@ public class Luta implements InterfaceLuta {
 
             try {
                 System.out.println("");
-                System.out.println("A LUTA COMEÇA EM 3...");
+                System.out.println("A LUTA COMEÇA EM \n3...");
                 Thread.sleep(1000);
                 System.out.println("2...");
                 Thread.sleep(1000);
