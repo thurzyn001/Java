@@ -126,7 +126,6 @@ public class Luta implements InterfaceLuta {
 
     }
 
-
     @Override
     public void luta() {
 
