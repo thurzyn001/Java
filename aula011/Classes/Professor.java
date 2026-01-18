@@ -34,13 +34,13 @@ public class Professor extends Pessoa implements IntefaceProfessor {
     public void receberAumento(float aumento) {
         this.salario += aumento;
         String cargo = this.getSexo().equalsIgnoreCase("F") ? "da professora" : "do professor";
-        System.out.println("Salário " + cargo + " " + this.getNome() + " aumentado para " + this.getSalario() + " reais.");
+        System.out.println("\nSalário " + cargo + " " + this.getNome() + " aumentado para " + this.getSalario() + " reais.");
     }
 
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Professora" : "Professor";
-        return "================= " + titulo + " =================\n" +
+        return "\n================= " + titulo + " =================\n" +
         super.toString() + "\nEspecialidade: " +
         this.getEspecialidade() + "\nSalário: " + this.getSalario() +
         "\n=============================================";   

@@ -42,7 +42,7 @@ public abstract class Pessoa implements InterfacePessoa {
     @Override
     public void fazerAniversario() {
         this.idade++;
-        System.out.println("Feliz aniversário " + this.getNome() +
+        System.out.println("\nFeliz aniversário " + this.getNome() +
          "! Agora você tem " + this.getIdade() + " anos.");
     }   
 

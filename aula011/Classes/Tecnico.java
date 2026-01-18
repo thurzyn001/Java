@@ -21,14 +21,14 @@ public class Tecnico extends Aluno implements InterfaceTecnico {
 
     @Override
     public void praticar() {
-        String cargo = this.getSexo().equalsIgnoreCase("F") ? "A técnica" : "O técnico";
+        String cargo = this.getSexo().equalsIgnoreCase("F") ? "\nA técnica" : "\nO técnico";
         System.out.println(cargo + " " + this.getNome() + " está praticando sua profissão.");
     }
     
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Técnica" : "Técnico";
-        return "================== " + titulo + " ==================\n" +
+        return "\n================== " + titulo + " ==================\n" +
                 super.DadosParaString() + "\nRegistro Profissional: " +
                 this.getRegistroProfissional() +
                 "\n==============================================";

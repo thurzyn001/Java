@@ -9,7 +9,7 @@ public class Visitante extends Pessoa implements InterfaceVisitante {
 
     @Override
     public String toString() {
-        return "================= Visitante =================\n" +
+        return "\n================= Visitante =================\n" +
         super.toString() +
         "\n=============================================";   
     }

@@ -32,13 +32,13 @@ public class Aluno extends Pessoa implements InterfaceAluno {
 
     @Override
     public void pagarMensalidade() {
-        System.out.println("Mensalidade de " + this.getNome() + " paga com sucesso!");
+        System.out.println("\nMensalidade de " + this.getNome() + " paga com sucesso!");
     }   
 
     @Override
     public void cancelarMatricula() {
         String cargo = this.getSexo().equalsIgnoreCase("F") ? "da aluna" : "do aluno";
-        System.out.println("Matrícula " + cargo + " " + this.getNome() + " cancelada.");
+        System.out.println("\nMatrícula " + cargo + " " + this.getNome() + " cancelada.");
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Aluno extends Pessoa implements InterfaceAluno {
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Aluna" : "Aluno";
-        return "================== " + titulo + " ====================\n" +
+        return "\n================== " + titulo + " ====================\n" +
         this.DadosParaString() +
         "\n=============================================";   
     }
