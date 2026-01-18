@@ -20,6 +20,16 @@ public class Aula011 {
 
 		pessoas[4] = new Bolsista("Carlos", 21, "M", 3333, "Arquitetura", 500);
 		System.out.println(pessoas[4].toString());
+
+		pessoas[1].fazerAniversario();
+		((Aluno) pessoas[1]).pagarMensalidade();
+
+		((Bolsista) pessoas[4]).renovarBolsa();
+		((Bolsista) pessoas[4]).pagarMensalidade();
+
+		((Tecnico) pessoas[3]).praticar();
+
+		((Professor) pessoas[2]).receberAumento(500);
 	}
 
 }

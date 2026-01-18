@@ -19,12 +19,13 @@ public class Bolsista extends Aluno implements InterfaceBolsista {
 
     @Override
     public void renovarBolsa() {
-        System.out.println("Bolsa renovada com sucesso!");
+        System.out.println("Bolsa de " + this.getNome() + " renovada com sucesso!");
     }
 
     @Override
     public void pagarMensalidade() {
-        System.out.println("Mensalidade paga para o bolsista " + this.getNome());
+        String cargo = this.getSexo().equalsIgnoreCase("F") ? "a bolsista" : "o bolsista";
+        System.out.println("Mensalidade paga para " + cargo + " " + this.getNome() + " com desconto de " + this.getBolsa() + " reais.");
     }
 
     @Override
