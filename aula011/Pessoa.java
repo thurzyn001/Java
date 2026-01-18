@@ -1,6 +1,6 @@
 package aula011;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements InterfacePessoa {
 
     private String nome;
     private int idade;
@@ -37,6 +37,7 @@ public abstract class Pessoa {
         this.sexo = sexo;
     }
 
+    @Override
     public void fazerAniversario() {
         this.idade++;
     }   
