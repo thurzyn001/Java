@@ -24,10 +24,10 @@ public class Tecnico extends Aluno implements InterfaceTecnico {
     
     @Override
     public String toString() {
-        return "================= Técnico ==================\n" +
+        return "================== Técnico ==================\n" +
                 super.DadosParaString() + "\nRegistro Profissional: " +
                 this.getRegistroProfissional() +
-                "\n=============================================";
+                "\n==============================================";
     }
 
 }

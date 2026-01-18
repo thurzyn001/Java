@@ -29,10 +29,10 @@ public class Bolsista extends Aluno implements InterfaceBolsista {
 
     @Override
     public String toString() {
-        return "================= Bolsista ==================\n" +
+        return "================== Bolsista ==================\n" +
                 super.DadosParaString() + "\nBolsa: " +
                 this.getBolsa() +
-                "\n=============================================";
+                "\n===============================================";
     }
 
 }
