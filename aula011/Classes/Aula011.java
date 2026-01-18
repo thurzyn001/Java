@@ -22,6 +22,7 @@ public class Aula011 {
 		System.out.println(pessoas[4].toString());
 
 		pessoas[1].fazerAniversario();
+		
 		((Aluno) pessoas[1]).pagarMensalidade();
 
 		((Bolsista) pessoas[4]).renovarBolsa();
