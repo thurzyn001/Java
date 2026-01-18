@@ -1,6 +1,8 @@
-package aula011;
+package aula011.Classes;
 
-public class Aluno extends Pessoa implements Interfacealuno {
+import aula011.Interfaces.InterfaceAluno;
+
+public class Aluno extends Pessoa implements InterfaceAluno {
 
     private int matricula;
     private String curso;

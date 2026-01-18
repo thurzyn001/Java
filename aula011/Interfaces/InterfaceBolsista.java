@@ -1,4 +1,4 @@
-package aula011;
+package aula011.Interfaces;
 
 public interface InterfaceBolsista {
 

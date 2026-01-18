@@ -1,6 +1,6 @@
-package aula011;
+package aula011.Interfaces;
 
-public interface Interfacealuno {
+public interface InterfaceAluno {
 
     public abstract void pagarMensalidade();
 

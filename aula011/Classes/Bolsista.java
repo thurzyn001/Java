@@ -1,4 +1,6 @@
-package aula011;
+package aula011.Classes;
+
+import aula011.Interfaces.InterfaceBolsista;
 
 public class Bolsista extends Aluno implements InterfaceBolsista {
 

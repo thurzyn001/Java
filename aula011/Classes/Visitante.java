@@ -1,4 +1,6 @@
-package aula011;
+package aula011.Classes;
+
+import aula011.Interfaces.InterfaceVisitante;
 
 public class Visitante extends Pessoa implements InterfaceVisitante {
     public Visitante(String nome, int idade, String sexo) {
