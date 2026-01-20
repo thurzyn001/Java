@@ -40,10 +40,10 @@ public class Professor extends Pessoa implements IntefaceProfessor {
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Professora" : "Professor";
-        return "\n================= " + titulo + " =================\n" +
+        return "\n======================== " + titulo + " ========================\n" +
         super.toString() + "\nEspecialidade: " +
         this.getEspecialidade() + "\nSalário: " + this.getSalario() +
-        "\n=============================================";   
+        "\n===========================================================";   
     }
 
 }

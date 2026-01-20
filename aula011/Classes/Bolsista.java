@@ -12,7 +12,7 @@ public class Bolsista extends Aluno implements InterfaceBolsista {
     }
 
     public float getBolsa() {
-        return bolsa;
+        return bolsa; 
     }
 
     public void setBolsa(float bolsa) {
@@ -33,10 +33,10 @@ public class Bolsista extends Aluno implements InterfaceBolsista {
 
     @Override
     public String toString() {
-        return "\n================== Bolsista ==================\n" +
-                super.DadosParaString() + "\nBolsa: " +
-                this.getBolsa() +
-                "\n===============================================";
+        return "\n======================== Bolsista =========================\n" +
+        super.DadosParaString() + "\nBolsa: " +
+        this.getBolsa() +
+        "\n===========================================================";
     }
 
 }

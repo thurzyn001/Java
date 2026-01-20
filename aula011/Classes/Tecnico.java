@@ -28,10 +28,10 @@ public class Tecnico extends Aluno implements InterfaceTecnico {
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Técnica" : "Técnico";
-        return "\n================== " + titulo + " ==================\n" +
+        return "\n========================= " + titulo + " =========================\n" +
                 super.DadosParaString() + "\nRegistro Profissional: " +
                 this.getRegistroProfissional() +
-                "\n==============================================";
+                "\n===========================================================";
     }
 
 }

@@ -49,9 +49,9 @@ public class Aluno extends Pessoa implements InterfaceAluno {
     @Override
     public String toString() {
         String titulo = this.getSexo().equalsIgnoreCase("F") ? "Aluna" : "Aluno";
-        return "\n================== " + titulo + " ====================\n" +
+        return "\n========================== " + titulo + " ==========================\n" +
         this.DadosParaString() +
-        "\n=============================================";   
+        "\n===========================================================";   
     }
 
 }
