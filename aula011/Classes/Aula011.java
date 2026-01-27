@@ -6,7 +6,7 @@ public class Aula011 {
 
 		Pessoa[] pessoas = new Pessoa[5];
 
-		pessoas[0] = new Visitante("Estevo", 22, "M"); 
+		pessoas[0] = new Visitante("Estevo", 22, "M");
 
 		pessoas[1] = new Aluno("Maria", 20, "F", 1111, "Informática");
 
@@ -46,6 +46,7 @@ public class Aula011 {
 			}
 
 			p.fazerAniversario();
+			
 		}
 
 	}
